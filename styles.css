@@ -1,13 +1,14 @@
 body {
   margin: 0;
-  font-family:'Jost',sans-serif ;
+  font-family: "Jost", sans-serif;
 }
-.service{
-    margin:100px 60px;
+.service {
+  margin: 100px 60px;
 }
 .navbar {
   display: grid;
   position: fixed;
+  z-index: 1;
   width: 100%;
   grid-template-columns: 1fr 2fr 1fr;
   background-color: rgba(26, 24, 24, 1);
@@ -22,8 +23,8 @@ body {
   align-items: center;
   cursor: pointer;
 }
-.navbar-icon{
-  margin:10px 0 0 20px;
+.navbar-icon {
+  margin: 10px 0 0 20px;
 }
 .navbar-list a:hover {
   color: rgb(98, 14, 14);
@@ -39,12 +40,17 @@ body {
   color: white;
   cursor: pointer;
 }
-.menubar .line {
-  width: 20px;
-  height: 2px;
+.menubar {
   margin: 2px;
   color: white;
   display: none;
+}
+.menubar-content {
+  display: none;
+  width: 5rem;
+  height: 2rem;
+  text-align: center;
+  color: white;
 }
 .part1 {
   text-align: center;
@@ -91,19 +97,19 @@ button {
 button:hover {
   background-color: rgb(41, 186, 169);
 }
-.part2{
-    margin:60px;
-    font-size: 20px;
-    line-height: 30px;
-    font-family: 'Jost',sans-serif;
+.part2 {
+  margin: 60px;
+  font-size: 20px;
+  line-height: 30px;
+  font-family: "Jost", sans-serif;
 }
-.part2 .para{
-    display:flex;
-    flex-direction:column;
+.part2 .para {
+  display: flex;
+  flex-direction: column;
 }
-.part2 .para h4{
-     color:rgb(50, 163, 135);
-     letter-spacing: 2px;
+.part2 .para h4 {
+  color: rgb(50, 163, 135);
+  letter-spacing: 2px;
 }
 .smallbox {
   display: grid;
@@ -152,10 +158,11 @@ button:hover {
     align-items: center;
     padding:10px;
 }*/
-.gridbox,.part7-box {
+.gridbox,
+.part7-box {
   position: relative;
   width: auto;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .image {
@@ -173,14 +180,14 @@ button:hover {
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: .5s ease;
-  background-color: rgba(0,0,0,0.5);
+  transition: 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .gridbox:hover .text-content {
   opacity: 1;
 }
-.part7-box:hover .text-content{
+.part7-box:hover .text-content {
   opacity: 1;
 }
 .text {
@@ -201,7 +208,7 @@ button:hover {
   margin: 10px 60px;
   /* border:2px solid; */
   justify-content: center;
-  
+
   padding: 10px;
   overflow: hidden;
 }
@@ -244,8 +251,8 @@ button:hover {
   height: 100%;
   cursor: pointer;
 }
-.part4{
-  min-width:60%;
+.part4 {
+  min-width: 60%;
 }
 .part4 .greenbox {
   border: 2px solid rgb(13, 179, 145);
@@ -343,7 +350,7 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(autofit, minmax(200px, 1fr));
   gap: 20px;
-  font-size:22px;
+  font-size: 22px;
   margin: 0 80px;
   justify-content: center;
   align-items: center;
@@ -378,9 +385,9 @@ button:hover {
   font-size: 24px;
   /* z-index: -1; */
 }
-.part7 h6{
-    color:rgb(18, 134, 105);
-    letter-spacing: 2px;
+.part7 h6 {
+  color: rgb(18, 134, 105);
+  letter-spacing: 2px;
 }
 .part7-img {
   display: flex;
@@ -489,12 +496,13 @@ button:hover {
   button {
     margin-bottom: 30px;
   }
-  .part2 .para{
-    display:flex;
+  .part2 .para {
+    display: flex;
     flex-direction: row;
   }
-  .part2 .para .part2-head,p{
-     flex:1;
+  .part2 .para .part2-head,
+  p {
+    flex: 1;
   }
   .part3 {
     display: grid;
@@ -505,7 +513,7 @@ button:hover {
     /* line-height: 30px; */
     flex-direction: column;
     justify-content: center;
-    align-items:first baseline;
+    align-items: first baseline;
   }
   .part6 {
     grid-template-columns: repeat(2, minmax(200px, 1fr));
@@ -531,12 +539,59 @@ button:hover {
   .quick-links {
     flex: 1;
   }
-  .navbar-icon{
-    margin:10px 100px 0 110px;
+  .navbar-icon {
+    margin: 10px 100px 0 110px;
   }
 }
-@media (min-width:1150px){
-  .part3-para{
+@media (min-width: 1150px) {
+  .part3-para {
     line-height: 40px;
+  }
+}
+@media (max-width: 720px) {
+  .navbar-list,
+  .navbar-icon {
+    display: none;
+  }
+  .navbar h2 {
+    margin: 20px;
+  }
+  .menubar-content {
+    display: none;
+  }
+  .menubar {
+    display: block;
+    flex: 1;
+    margin: auto 20px auto 0;
+    text-align: right;
+    cursor: pointer;
+  }
+  .menubar:hover + .menubar-content {
+    display: block;
+    /* flex-direction: column; */
+    width: 100px;
+    height: 400px;
+    color:white;
+    background-color: rgba(24, 22, 22,0.2);
+  }
+  .menubar:hover + .cross-symbol {
+    margin: 50px auto auto 20px;
+  }
+  .menubar:hover + .navbar-list {
+    color: white;
+    display: block;
+    margin: 50px;
+  }
+  .menubar:hover + .navbar-icon {
+    color: white;
+    display: block;
+    margin: 50px;
+    text-align: center;
+  }
+  .menubar:hover + .menubar {
+    display: none;
+  }
+  .navbar {
+    display: flex;
   }
 }
