@@ -5,6 +5,9 @@ body {
 .service {
   margin: 100px 60px;
 }
+.showmenu{
+  display:block;
+}
 .navbar {
   display: grid;
   position: fixed;
@@ -138,8 +141,11 @@ button:hover {
 .smallbox p {
   max-width: 200px;
 }
+.part3{
+  box-sizing: border-box;
+}
 .part3 img {
-  margin: 20px;
+  margin: auto;
   height: 35rem;
 }
 .part3-para {
@@ -547,54 +553,23 @@ button:hover {
     line-height: 40px;
   }
 }
-@media (max-width: 720px) {
-  .navbar-list,
-  .navbar-icon {
-    display: none;
+@media only screen and (max-width: 720px) {
+  .navbar-list {
+    display: flex;
+    justify-content: space-around;
+  }
+  .navbar-list a{
+    padding:5px;
   }
   .navbar h2 {
     margin: 20px;
   }
-  .menubar-content {
-    display: none;
-  }
-  .menubar {
-    display: block;
-    flex: 1;
-    margin: auto 20px auto 0;
-    text-align: right;
-    cursor: pointer;
-  }
-  .menubar:hover + .menubar-content {
-    display: block;
-    /* flex-direction: column; */
-    width: 100px;
-    height: 400px;
-    color:white;
-    background-color: rgba(24, 22, 22,0.2);
-  }
-  .menubar:hover + .cross-symbol {
-    margin: 50px auto auto 20px;
-  }
-  .menubar:hover + .navbar-list {
-    color: white;
-    display: block;
-    margin: 50px;
-  }
-  .menubar:hover + .navbar-icon {
-    color: white;
-    display: block;
-    margin: 50px;
-    text-align: center;
-  }
-  .menubar:hover + .menubar {
-    display: none;
-  }
+  
   .navbar {
     display: flex;
   }
 }
-@media (max-width:720px){
+@media (max-width:650px){
   .gridbox-firstrow, .gridbox-secondrow, .gridbox-thirdrow{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
